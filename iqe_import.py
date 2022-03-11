@@ -3,9 +3,9 @@
 bl_info = {
 	"name": "Import Inter-Quake Model (.iqm, .iqe)",
 	"description": "Import Inter-Quake Model.",
-	"author": "Tor Andersson",
+	"author": "Tor Andersson - Modified by WatIsDeze",
 	"version": (2012, 12, 2),
-	"blender": (2, 80, 0),
+	"blender": (2, 93, 0),
 	"location": "File > Import > Inter-Quake Model",
 	"wiki_url": "http://github.com/ccxvii/asstools",
 	"category": "Import-Export",
@@ -652,7 +652,7 @@ def make_mesh_data(iqmodel, name, meshes, amtobj, dir):
 	link_object(obj)
 
 	# Set the mesh to single-sided to spot normal errors
-	mesh.show_double_sided = False
+	mesh.use_mirror_topology = False
 
 	has_vn = len(iqmodel.meshes[0].vn) > 0
 	has_vt = len(iqmodel.meshes[0].vt) > 0
